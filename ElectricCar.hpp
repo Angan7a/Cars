@@ -9,7 +9,7 @@ public:
     ElectricCar(ElectricEngine* engine) : engine_(engine) {}
     ~ElectricCar() {}
     void charge() {}
-
+private:
     ElectricEngine* engine_;
 };
 

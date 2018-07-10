@@ -10,7 +10,7 @@ class HybridCar : virtual public ElectricCar, virtual public PetrolCar
 public:
     HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng) : ElectricCar(electricEng), PetrolCar(petrolEng) {}
     ~HybridCar() {}
-
+private:
     PetrolEngine* petrolEngine_;
     ElectricEngine* electricEngine_;
 };
