@@ -3,8 +3,8 @@
 class PetrolEngine
 {
 public:
-    PetrolEngine(int power, float capacity, int gears);
-    void changeGear(int gear);
+    PetrolEngine(int power=10, float capacity=10, int gears=6) : power_(power), capacity_(capacity), gears_(gears), currentGear_(0) {}
+    void changeGear(int gear) {}
 
     int power_;         // in HP
     float capacity_;    // in ccm

@@ -3,12 +3,12 @@
 #include "PetrolEngine.hpp"
 #include "Car.hpp"
 
-class Petrol : public Car
+class PetrolCar : virtual public Car
 {
 public:
-    PetrolCar(PetrolEngine* engine);
-    ~PetrolCar();
-    void refuel();
+    PetrolCar(PetrolEngine* engine) : engine_(engine){}
+    ~PetrolCar() {}
+    void refuel() {}
 
     PetrolEngine* engine_;
 };

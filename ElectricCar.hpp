@@ -1,15 +1,15 @@
 #pragma once
 
-#include "PetrolEngine.hpp"
-#incldue "Car.hpp"
+#include "ElectricEngine.hpp"
+#include "Car.hpp"
 
-class ElectricCar
+class ElectricCar : virtual public Car
 {
 public:
-    ElectricCar(PetrolEngine* engine);
-    ~ElectricCar();
-    void charge();
+    ElectricCar(ElectricEngine* engine) : engine_(engine) {}
+    ~ElectricCar() {}
+    void charge() {}
 
-    PetrolEngine* engine_;
+    ElectricEngine* engine_;
 };
 
