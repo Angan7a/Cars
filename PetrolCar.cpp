@@ -21,6 +21,6 @@ void PetrolCar::changeGear(int g) {
 		engine_->changeGear(g);
 	}
 	catch(InvalidGear &ig) {
-		ig.print();		
+        std::cerr << ig.what() << std::endl;		
 	}
 }	

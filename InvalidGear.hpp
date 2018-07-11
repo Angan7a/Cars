@@ -1,8 +1,11 @@
 #pragma once
+#include<string>
 
 class InvalidGear {
+private:
+    std::string error_;
 public:
-	InvalidGear();
-	void print();
+	InvalidGear(std::string error);
+	const char* what() const;
 
 };

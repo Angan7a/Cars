@@ -1,9 +1,8 @@
 #include "InvalidGear.hpp"
-#include<iostream>
 
-InvalidGear::InvalidGear() {}
+InvalidGear::InvalidGear(std::string error) : error_(error) {}
 
-void InvalidGear::print() {
-	std::cerr << "Bieg musi byc z zakresu [1-5]" << std::endl;
+const char* InvalidGear::what() const {
+    return error_.c_str();
 }
 
