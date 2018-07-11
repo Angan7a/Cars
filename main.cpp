@@ -19,17 +19,9 @@ int main()
     car->brake();
     car->refill();
 
-  //  nissan.charge();
-   // nissan.accelerate(80);
-   // nissan.turnLeft();
-
     HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
     car = &toyota;
     car->accelerate(100);
     car->brake();
     car->refill();
-  //  toyota.accelerate(100);
-  //  toyota.brake();
-  //  toyota.charge();
-  //  toyota.refuel();
 }
