@@ -9,6 +9,7 @@ int main()
     PetrolCar opel(new PetrolEngine(120, 1800, 6));
     car = &opel;
     car->accelerate(50);
+    car->changeGear(88888888);
     car->brake();
     car->refill();
 

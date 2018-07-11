@@ -1,4 +1,5 @@
 #include "PetrolCar.hpp"
+#include "InvalidGear.hpp"
 #include <iostream>
 
 PetrolCar::PetrolCar(PetrolEngine* engine) : engine_(engine) {} 
@@ -12,3 +13,12 @@ void PetrolCar::refuel() {
 void PetrolCar::refill() {
 	refuel();
 }
+
+void PetrolCar::changeGear(int g) {
+	try {
+		engine_->changeGear(g);
+	}
+	catch(InvalidGear &ig) {
+		ig.print();		
+	}
+}	
