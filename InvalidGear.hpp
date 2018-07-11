@@ -1,6 +1,8 @@
 #pragma once
 
-class InvalidGear {
+#include <stdexcept>
+
+class InvalidGear : public std::invalid_argument {
 public:
 	InvalidGear();
 	void print();
