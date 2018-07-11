@@ -5,4 +5,7 @@ HybridCar::HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng) : Ele
 
 HybridCar::~HybridCar() {}
 
-
+void HybridCar::refill() {
+	PetrolCar::refill();
+	ElectricCar::refill();
+}

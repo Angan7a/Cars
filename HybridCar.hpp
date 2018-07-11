@@ -5,11 +5,12 @@
 #include "ElectricCar.hpp"
 #include "PetrolCar.hpp"
 
-class HybridCar : virtual public ElectricCar, virtual public PetrolCar
+class HybridCar : public ElectricCar, public PetrolCar
 {
 public:
     HybridCar(PetrolEngine* petrolEng, ElectricEngine* electricEng);
     ~HybridCar();
+    void refill();
 private:
     PetrolEngine* petrolEngine_;
     ElectricEngine* electricEngine_;

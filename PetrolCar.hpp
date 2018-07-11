@@ -8,8 +8,9 @@ class PetrolCar : virtual public Car
 public:
     PetrolCar(PetrolEngine* engine);
     ~PetrolCar();
-    void refuel();
+    void refill();
 private:
+    void refuel();
     PetrolEngine* engine_;
 };
 
