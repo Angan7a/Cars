@@ -2,6 +2,8 @@
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
 #include "Car.hpp"
+#include "InvalidPower.hpp"
+#include <iostream>
 
 int main()
 {
@@ -13,11 +15,17 @@ int main()
     car->brake();
     car->refill();
 
-    ElectricCar nissan(new ElectricEngine(130, 650));
+    try {
+    ElectricCar nissan(new ElectricEngine(-130, 650));
     car = &nissan;
     car->accelerate(80);
     car->brake();
     car->refill();
+    }
+    catch(const InvalidPower& ip) {
+	std::cout << ip.what() << std::endl;
+    }
+
 
     HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
     car = &toyota;
