@@ -21,7 +21,7 @@ void PetrolCar::changeGear(int g) {
 	try {
 		engine_->changeGear(g);
 	}
-	catch(std::invalid_argument &ig) {
+	catch(const std::invalid_argument &ig) {
 		std::cerr << ig.what() << std::endl;		
 	}
 }	
