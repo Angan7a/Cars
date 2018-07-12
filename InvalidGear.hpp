@@ -5,6 +5,4 @@
 class InvalidGear : public std::invalid_argument {
 public:
 	InvalidGear();
-	void print();
-
 };
