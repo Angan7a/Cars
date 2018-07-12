@@ -1,6 +1,7 @@
 #include "PetrolCar.hpp"
 #include "InvalidGear.hpp"
 #include <iostream>
+#include <stdexcept>
 
 PetrolCar::PetrolCar(PetrolEngine* engine) : engine_(engine) {} 
 
@@ -20,7 +21,7 @@ void PetrolCar::changeGear(int g) {
 	try {
 		engine_->changeGear(g);
 	}
-	catch(InvalidGear &ig) {
-        std::cerr << ig.what() << std::endl;		
+	catch(std::invalid_argument &ig) {
+		std::cerr << ig.what() << std::endl;		
 	}
 }	

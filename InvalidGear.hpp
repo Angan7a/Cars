@@ -1,11 +1,8 @@
 #pragma once
 #include<string>
+#include <stdexcept>
 
-class InvalidGear {
-private:
-    std::string error_;
+class InvalidGear : public std::invalid_argument {
 public:
-	InvalidGear(std::string error);
-	const char* what() const;
-
+	InvalidGear(std::string s);
 };
