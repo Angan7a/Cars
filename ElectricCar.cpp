@@ -1,11 +1,9 @@
 #include "ElectricCar.hpp"
 #include <iostream>
 
-ElectricCar::ElectricCar(ElectricEngine* engine) : engine_(engine) {} 
+ElectricCar::ElectricCar(std::shared_ptr<ElectricEngine> engine) : engine_(engine) {} 
 
-ElectricCar::~ElectricCar() {
-	delete engine_;
-}
+ElectricCar::~ElectricCar() {}
 
 void ElectricCar::charge() {
 	std::cout << __FUNCTION__ << std::endl;

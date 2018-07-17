@@ -2,7 +2,7 @@
 #include<string>
 #include <stdexcept>
 
-class InvalidPower : public std::bad_alloc {
+class InvalidPower : public std::invalid_argument {
 public:
 	InvalidPower();
 };

@@ -2,15 +2,16 @@
 
 #include "ElectricEngine.hpp"
 #include "Car.hpp"
+#include <memory>
 
 class ElectricCar : virtual public Car
 {
 public:
-    ElectricCar(ElectricEngine* engine);
+    ElectricCar(std::shared_ptr<ElectricEngine> engine);
     ~ElectricCar();
     void refill();
 private:
     void charge();
-    ElectricEngine* engine_;
+    std::shared_ptr<ElectricEngine> engine_;
 };
 

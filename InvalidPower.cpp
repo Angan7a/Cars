@@ -1,5 +1,5 @@
 #include "InvalidPower.hpp"
 
 
-InvalidPower::InvalidPower() : std::bad_alloc() {}
+InvalidPower::InvalidPower() : std::invalid_argument("Zla moc") {}
 

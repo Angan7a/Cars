@@ -3,11 +3,9 @@
 #include <iostream>
 #include <stdexcept>
 
-PetrolCar::PetrolCar(PetrolEngine* engine) : engine_(engine) {} 
+PetrolCar::PetrolCar(std::shared_ptr<PetrolEngine> engine) : engine_(engine) {} 
 
-PetrolCar::~PetrolCar() {
-	delete engine_;
-}
+PetrolCar::~PetrolCar() {}
 
 void PetrolCar::refuel() {
     std::cout << __FUNCTION__ << std::endl;
