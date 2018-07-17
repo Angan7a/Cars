@@ -12,13 +12,13 @@ int main()
     PetrolCar opel(std::make_shared<PetrolEngine>(10,13,15));
     car = &opel;
     car->accelerate(50);
-    car->changeGear(88888888);
+    car->changeGear(2);
     car->brake();
     car->refill();
-
+std::cout << "adsdas" << std::endl;
     try {
-    std::shared_ptr<ElectricEngine> pElecEng = std::make_shared<ElectricEngine>(-120, -1800);
-        ElectricCar nissan(pElecEng);
+        ElectricCar nissan(std::make_shared<ElectricEngine>(-120, -1800));
+      //  ElectricCar nissan(pElecEng);
         car = &nissan;
         car->accelerate(80);
         car->brake();
@@ -28,11 +28,11 @@ int main()
 	std::cout << ip.what() << std::endl;
     }
 
-/*
-    HybridCar toyota(new PetrolEngine(80, 1400, 5), new ElectricEngine(100, 540));
+
+    HybridCar toyota(std::make_shared<PetrolEngine>(80, 1400, 5), std::make_shared<ElectricEngine>(100, 540));
     car = &toyota;
     car->accelerate(100);
     car->brake();
     car->refill();
-*/
+
 }

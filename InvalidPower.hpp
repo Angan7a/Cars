@@ -2,7 +2,7 @@
 #include<string>
 #include <stdexcept>
 
-class InvalidPower : public std::invalid_argument {
+class InvalidPower : public std::out_of_range {
 public:
-	InvalidPower();
+	InvalidPower(std::string);
 };
