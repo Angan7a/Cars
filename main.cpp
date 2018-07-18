@@ -2,7 +2,7 @@
 #include "ElectricCar.hpp"
 #include "HybridCar.hpp"
 #include "Car.hpp"
-#include "InvalidPower.hpp"
+#include "InvalidRange.hpp"
 #include <iostream>
 #include <memory>
 
@@ -24,7 +24,7 @@ std::cout << "adsdas" << std::endl;
         car->brake();
         car->refill();
     }
-    catch(const InvalidPower& ip) {
+    catch(const InvalidRange& ip) {
 	std::cout << ip.what() << std::endl;
     }
 

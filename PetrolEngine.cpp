@@ -1,12 +1,12 @@
 #include "PetrolEngine.hpp"
 #include "InvalidGears.hpp"
-#include "InvalidPower.hpp"
+#include "InvalidRange.hpp"
 #include <iostream>
 
 
 PetrolEngine::PetrolEngine(int power, float capacity, int gears) : capacity_(capacity), gears_(gears), currentGear_(0) {
 	if((power <=0) || (power>500)) {
-		throw InvalidPower("Power should be in the range [1-500]");
+		throw InvalidRange("Power should be in the range [1-500]");
 	}
 	power_ = power;
 } 
