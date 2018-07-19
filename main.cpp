@@ -9,30 +9,36 @@
 int main()
 {
     Car *car;
-    PetrolCar opel(std::make_shared<PetrolEngine>(10,13,15));
-    car = &opel;
-    car->accelerate(50);
-    car->changeGear(2);
-    car->brake();
-    car->refill();
-std::cout << "adsdas" << std::endl;
+    try {
+        PetrolCar opel(std::make_shared<PetrolEngine>(10,1300,5));
+        car = &opel;
+        car->accelerate(50);
+        car->changeGear(2);
+        car->brake();
+        car->refill();
+    }
+    catch(const std::exception& ip) {
+	std::cout << "Opel - " << ip.what() << std::endl;
+    }
     try {
         ElectricCar nissan(std::make_shared<ElectricEngine>(-120, -1800));
-      //  ElectricCar nissan(pElecEng);
         car = &nissan;
         car->accelerate(80);
         car->brake();
         car->refill();
     }
-    catch(const InvalidRange& ip) {
-	std::cout << ip.what() << std::endl;
+    catch(const std::exception& ip) {
+	std::cout << "Nissan - " << ip.what() << std::endl;
     }
 
-
-    HybridCar toyota(std::make_shared<PetrolEngine>(80, 1400, 5), std::make_shared<ElectricEngine>(100, 540));
-    car = &toyota;
-    car->accelerate(100);
-    car->brake();
-    car->refill();
-
+    try {
+        HybridCar toyota(std::make_shared<PetrolEngine>(80, 140, 5), std::make_shared<ElectricEngine>(100, 80));
+        car = &toyota;
+        car->accelerate(100);
+        car->brake();
+        car->refill();
+    }
+    catch(const std::exception& ip) {
+	std::cout << "Toyota - " << ip.what() << std::endl;
+    }
 }
