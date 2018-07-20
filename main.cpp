@@ -13,7 +13,7 @@ int main()
         PetrolCar opel(std::make_shared<PetrolEngine>(10,1300,5));
         car = &opel;
         car->accelerate(50);
-        car->changeGear(2);
+        car->changeGear(12);
         car->brake();
         car->refill();
     }
